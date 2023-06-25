@@ -206,6 +206,24 @@ Reference: <https://docs.px4.io/main/en/dev_setup/fast-dds-installation.html>
 	```sh
 	echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
 	```
+ 8. Error
+    ```
+    The following signatures couldn't be verified because the public key is not available: NO_PUBKEY F42ED6FBAB17C654
+    Reading package lists... Done
+    W: GPG error: https://mirrors.tuna.tsinghua.edu.cn/ros2/ubuntu focal InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY F42ED6FBAB17C654
+    E: The repository 'https://mirrors.tuna.tsinghua.edu.cn/ros2/ubuntu focal InRelease' is not signed.
+    N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+    N: See apt-secure(8) manpage for repository creation and user configuration details.
+    ```
+    You should re-download the key from <https://mirror.tuna.tsinghua.edu.cn/help/ros2/>.
+
+    ```
+    The following packages have unmet dependencies:
+    ros-foxy-desktop : Depends: ros-foxy-joy but it is not going to be installed
+                       Depends: ros-foxy-teleop-twist-joy but it is not going to be installed
+    E: Unable to correct problems, you have held broken packages.
+    ```
+    You should `sudo aptitude install ros-foxy-joy` and select the second consequent.
 
 Reference: <https://zhuanlan.zhihu.com/p/430670234>  
 Reference: <https://docs.px4.io/main/en/ros/ros2_comm.html>
